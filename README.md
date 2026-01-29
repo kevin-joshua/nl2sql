@@ -26,23 +26,23 @@ NL2SQL is an intelligent query interface that converts natural language question
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                           NL2SQL Pipeline                                │
-│                                                                          │
-│   "Show me sales by region"                                              │
-│            │                                                             │
-│            ▼                                                             │
+│                           NL2SQL Pipeline                               │
+│                                                                         │
+│   "Show me sales by region"                                             │
+│            │                                                            │
+│            ▼                                                            │
 │   ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐   │
 │   │ Intent Extractor│ ──► │ Intent Validator│ ──► │Cube Query Builder│  │
 │   │     (LLM)       │     │   (Catalog)     │     │   (Mapping)     │   │
 │   └─────────────────┘     └─────────────────┘     └─────────────────┘   │
-│                                                            │             │
-│                                                            ▼             │
+│                                                            │            │
+│                                                            ▼            │
 │                                                   ┌─────────────────┐   │
 │                                                   │   Cube Client   │   │
 │                                                   │    (HTTP)       │   │
 │                                                   └─────────────────┘   │
-│                                                            │             │
-│                                                            ▼             │
+│                                                            │            │
+│                                                            ▼            │
 │                                                   ┌─────────────────┐   │
 │                                                   │   PostgreSQL    │   │
 │                                                   │   (Data Store)  │   │
