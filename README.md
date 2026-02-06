@@ -160,7 +160,7 @@ The `Intent Normalizer` maps natural language aliases to specific Cube.js identi
 | **Query Orchestrator** | `backend/app/services/query_orchestrator.py` | Manages the execution pipeline. |
 | **Intent Extractor** | `backend/app/services/intent_extractor.py` | Calls LLM to parse natural language. |
 | **Intent Normalizer** | `backend/app/services/intent_normalizer.py` | Maps semantic terms to Cube IDs. |
-| **Intent Validator** | `backend/app/services/intent_validator.py` | Checks intent against `catalog.yaml`. |
+| **Intent Validator** | `backend/app/services/intent_validator.py` | Checks intent against `catalog.yaml`. See `backend/app/docs/INTENT_VALIDATION.md` for details. |
 | **Catalog Generator** | `backend/app/utils/generate_catalog.py` | Script to sync catalog with Cube schema. |
 | **Cube Model** | `cube/model/cubes/` | YAML files defining the data schema. |
 
