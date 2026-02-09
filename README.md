@@ -38,24 +38,24 @@ The system follows a pipeline architecture where data flows through distinct sta
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                           NL2SQL Pipeline                                │
-│                                                                          │
-│   "Show me sales by region"                                              │
-│            │                                                             │
-│            ▼                                                             │
+│                           NL2SQL Pipeline                               │
+│                                                                         │
+│   "Show me sales by region"                                             │
+│            │                                                            │
+│            ▼                                                            │
 │   ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐   │
 │   │ Intent Extractor│ ──► │ Intent Validator│ ──► │Cube Query Builder│  │
 │   │     (LLM)       │     │   (Catalog)     │     │   (Mapping)     │   │
 │   └─────────────────┘     └─────────────────┘     └─────────────────┘   │
 │                                                            │             │
 │                                                            ▼             │
-│   ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐   │
-│   │ Visualization   │ ◄── │   Cube Client   │ ◄── │   Cube Server   │   │
-│   │   Generator     │     │    (HTTP)       │     │    (API)        │   │
-│   └─────────────────┘     └─────────────────┘     └─────────────────┘   │
-│            │                                               │             │
-│            ▼                                               ▼             │
-│        Response                                   ┌─────────────────┐   │
+│                                                   ┌─────────────────┐    │
+│                                                   │   Cube Client   │    │
+│                                                   │    (HTTP)       │    │
+│                                                   └─────────────────┘    │
+│                                                            │             │
+│                                                            ▼             │
+│                                                   ┌─────────────────┐   │
 │                                                   │   PostgreSQL    │   │
 │                                                   │   (Data Store)  │   │
 │                                                   └─────────────────┘   │
